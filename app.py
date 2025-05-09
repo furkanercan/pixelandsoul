@@ -1,20 +1,15 @@
 import streamlit as st
+from PIL import Image
 
 # Set page configuration
 st.set_page_config(page_title="Pixel & Soul Photography", page_icon=":camera:")
 
-# Main container - center everything
-container = st.container()
+# Load the image
+logo = Image.open("images/Pixel_Soul_Logo_HighRes.png")
 
-with container:
-    st.markdown(
-        """
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
-            <h1 style="font-family: 'Arial', sans-serif; font-weight: bold;">Pixel & Soul Photography</h1>
-            <img src="Pixel_Soul_Logo_HighRes.png" alt="Pixel & Soul Logo" style="max-width: 300px; width: 100%; height: auto; margin: 20px 0;">
-            <h2>Website Coming Soon!</h2>
-            <p style="font-size: 16px;">Follow us on Instagram <strong>@pixelandsoulphoto</strong></p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+# Main container
+with st.container():
+    st.markdown("<h1 style='text-align: center;'>Pixel & Soul Photography</h1>", unsafe_allow_html=True)
+    st.image(logo, use_column_width=False, width=300)
+    st.markdown("<h2 style='text-align: center;'>Website Coming Soon!</h2>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center;'>Follow us on Instagram <strong>@pixelandsoulphoto</strong></p>", unsafe_allow_html=True)
